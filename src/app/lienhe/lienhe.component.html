@@ -1,0 +1,83 @@
+<div class="container-fluid">
+  <div class="row">
+    <div style="width: 100%;height: 500px">
+      <iframe style="width: 100%;height: 100%"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d70862.97835718036!2d105.795935241522!3d21.021618584229156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135aba15ec15d17%3A0x620e85c2cfe14d4c!2zTMSDbmcgQ2jhu6cgdOG7i2NoIEjhu5MgQ2jDrSBNaW5o!5e0!3m2!1svi!2s!4v1635386438469!5m2!1svi!2s"></iframe>
+    </div>
+  </div>
+  <div class="row">
+    <div class="mainContentContact">
+      <h1 class="titleMainContact">CÔNG TY CỔ PHẦN SẢN XUẤT KT-PACK</h1>
+      <p class="desMainContact">Đem đến lòng tin và sự hài lòng của Qúy Khách Hàng tới KT-PACK</p>
+      <div class="rowMainContact">
+        <div class="colMainContact">
+          <div class="img-container">
+            <i class="fa fa-phone"></i>
+          </div>
+          <h2 class="titleColMainContact">Điện Thoại</h2>
+          <h3 class="contentColMainContact">{{dataServicesService.infoCompany.phone[0]}}</h3>
+          <h3 class="contentColMainContact">{{dataServicesService.infoCompany.phone[1]}}</h3>
+        </div>
+        <div class="colMainContact">
+          <div class="img-container">
+            <i class="fa fa-envelope"></i>
+          </div>
+          <h2 class="titleColMainContact">Email</h2>
+          <h3 class="contentColMainContact">{{dataServicesService.infoCompany.email[0]}}</h3>
+          <h3 class="contentColMainContact">{{dataServicesService.infoCompany.email[1]}}</h3>
+        </div>
+        <div class="colMainContact">
+          <div class="img-container">
+            <i class="fa fa-map-marker-alt"></i>
+          </div>
+          <h2 class="titleColMainContact">Nhà Máy</h2>
+          <h3 class="contentColMainContact">{{dataServicesService.infoCompany.address[0]}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row row3">
+    <form [formGroup]="infoCustomerForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="row">
+        <div class="form-content-left ">
+          <div class="form-group">
+            <mat-form-field appearance="outline">
+              <mat-label>Tên của bạn</mat-label>
+              <input  matInput required placeholder="Tên của bạn" name="name" formControlName="name">
+            </mat-form-field>
+            <div *ngIf="infoCustomerForm.controls.name.errors" class="notification">* Hãy nhập tên của bạn</div>
+            <mat-form-field appearance="outline">
+              <mat-label>Địa chỉ mail</mat-label>
+              <input type="email" matInput required placeholder="Địa chỉ mail" name="email" formControlName="email">
+            </mat-form-field>
+            <div *ngIf="infoCustomerForm.controls.email.errors" class="notification">* Hãy nhập email của bạn</div>
+            <mat-form-field appearance="outline">
+              <mat-label>Số điện thoại</mat-label>
+              <input matInput required placeholder="Số điện thoại" name="phone" formControlName="phone">
+            </mat-form-field>
+            <div *ngIf="infoCustomerForm.controls.phone.errors" class="notification">* Hãy nhập số điện thoại của bạn</div>
+          </div>
+        </div>
+        <div class="form-content-right ">
+          <div class="form-group">
+            <mat-form-field appearance="outline">
+              <mat-label>Nội dung</mat-label>
+              <textarea rows="9" matInput required placeholder="Nội dung" name="content" formControlName="content">
+                      </textarea>
+            </mat-form-field>
+            <div *ngIf="infoCustomerForm.controls.content.errors" class="notification">* Hãy nhập nội dung của bạn</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row row31">
+        <button [disabled]="infoCustomerForm.invalid" mat-raised-button color="accent" (click)="onSubmit()">GỬI THÔNG TIN</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="row row4">
+    <app-footer-main></app-footer-main>
+  </div>
+</div>

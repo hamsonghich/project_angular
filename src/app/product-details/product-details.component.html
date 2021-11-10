@@ -1,0 +1,129 @@
+<div class="container-fluid">
+  <div class="row row1">
+    <div class="col-left">
+      <app-side-bar-left></app-side-bar-left>
+      <app-banner-sales></app-banner-sales>
+    </div>
+    <div class="col-right">
+      <div class="col-right__level1">
+        <div class="content-img">
+          <div class="content-img__avatar">
+            <div class="content-img__avatar--fake"></div>
+            <div class="content-img__avatar--fake1"></div>
+            <div class="tagDiscount">
+              <p>{{productItem.discount.number}}%</p>
+              <p>GIẢM</p>
+            </div>
+            <img class="img-fake" src="{{ productItem.img[0].link}}" alt="">
+            <img id="idImg{{i}}" *ngFor="let item of productItem.img; let i = index" class="img-item"
+                 src="{{item.link}}"
+                 alt="{{item.name}}">
+          </div>
+          <div class="content-img__slider">
+
+            <owl-carousel-o [options]="customOptions">
+              <ng-container *ngFor="let item of productItem.img; let i = index">
+                <ng-template carouselSlide>
+                  <img class="item_img_small" id="img_details{{i}}" [src]="item.link" [alt]="item.name"
+                       [title]="item.name">
+                </ng-template>
+              </ng-container>
+            </owl-carousel-o>
+
+          </div>
+        </div>
+
+        <div class="content-text">
+          <div class="box-caption">
+            <div class="tag-like">
+              <span>Yêu Thích</span>
+            </div>
+            <p class="box-caption_1">
+              {{productItem.id.name}}
+            </p>
+          </div>
+          <div class="rating">
+            <span class="numberStar">{{productItem.star.number}}</span>
+            <div class="class-one1">
+              <ng-template #t1 let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                          <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                        </span>
+              </ng-template>
+              <ngb-rating [(rate)]="productItem.star.number" [starTemplate]="t1" [readonly]="true"
+                          [max]="5"></ngb-rating>
+            </div>
+            <div class="evaluate"><u>{{productItem.evaluate.number}}</u> <span>Đánh Giá</span></div>
+            <div class="sellNumber">
+              <u>{{productItem.sellNumber.number}}k </u> <span>Đã Bán</span>
+            </div>
+
+          </div>
+
+          <div class="caption_info">
+            <p>Tình trạng hàng: Còn Hàng</p>
+            <p>Lượt xem: {{productItem.evaluate.number * 2}}</p>
+            <p>Kho Hàng: liên hệ {{dataServicesService.infoCompany.phone[0]}} báo giá tại kho sản xuất</p>
+            <p>Giá : <span>Liên Hệ</span></p>
+            <p>Nhận Báo Giá : <strong href="tel:0915220153"
+                                      style="color: #ff4500"> {{dataServicesService.infoCompany.phone[0]}}
+              || {{dataServicesService.infoCompany.phone[1]}}</strong></p>
+            <p>Nơi cung cấp : <strong style="color: #ff4500"> {{productItem.address.name}}</strong></p>
+            <p>Mô tả ngắn : {{productItem.id.name}}</p>
+          </div>
+
+          <div class="socials-share">
+            <p class="socials-share__caption">Chia sẻ nếu sản phẩm làm bạn hài lòng nhé </p>
+            <div class="socials-share__btn">
+              <button mat-raised-button style="background: #4064ac"><i class="fab fa-facebook-f"></i> Share</button>
+              <button mat-raised-button style="background: #43a8ee"><i class="fab fa-twitter"></i> Share</button>
+              <button mat-raised-button style="background-color: #db4437;"><i class="fab fa-gofore"></i> Share</button>
+              <button mat-raised-button style="background-color: #dd5348;"><i class="fa fa-envelope"></i> Share</button>
+              <button mat-raised-button style="background-color: #ffb932"><img style="width: 15px"
+                                                                               src="./assets/Storage/Upload/icon/zalo_icon.png"
+                                                                               alt=""> Share
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-right__level2">
+        <div class="description-product">
+          <p class="description-product__title"><span>Mô tả sản phẩm</span></p>
+          <div class="description-product__intro">
+            <span>{{productItem.description[0].title}}</span><br>
+            <p *ngFor="let item of productItem.description[0].contentParam">{{item.param1}}</p>
+
+            <span>{{productItem.description[1].title}}</span>
+            <div class="container-table">
+              <table>
+                <tr *ngFor="let item of productItem.description[1].contentParam">
+                  <td>{{item.param1}}</td>
+                  <td>{{item.param2}}</td>
+                </tr>
+              </table>
+            </div>
+            <div>
+              <app-product-details-more-info></app-product-details-more-info>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-right__level3">
+        <div>
+          <app-more-product></app-more-product>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row row2">
+    <app-footer-main></app-footer-main>
+  </div>
+</div>
+
+<!--<span>{{productItem|json}}</span>-->
+<router-outlet></router-outlet>

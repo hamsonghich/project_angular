@@ -1,0 +1,116 @@
+@import "responsive.scss";
+
+.container-fluid{
+  .row1{
+    .content-about{
+      h2.intro{
+       font-family: foro;
+        font-weight: bold;
+        font-size: 180%;
+        color: var(--bs-warning);
+        margin-top: 10px;
+        i{
+          font-size: 70%;
+          margin-right: 10px;
+        }
+      }
+      h3.nameCompany{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
+        font-size: 130%;
+        color: #333;text-transform: uppercase;
+      }
+      span.nameTrust{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
+        font-size: 120%;
+        font-style: italic;
+        color: var(--bs-danger);
+        display: block;
+      }
+      span.nameIntro{
+        font-family: 'Pacifico', cursive;
+        font-weight: bold;
+        font-size: 150%;color: #333;
+        display: block;
+      }
+      p{
+        text-indent: 20px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 120%;font-style: italic;
+        color: var(--primary-color);
+      }
+
+      ul.title_commit{
+        font-family: 'Open Sans', sans-serif;
+        color: #ffd700;
+        text-transform: uppercase;
+        font-weight: bold;
+        p{
+          text-decoration: underline;
+          font-weight: bold;
+          font-style: italic;
+          margin-top: 10px;
+          font-size: 120%;color: var(--bs-warning);
+          margin-bottom: 10px;text-indent: 0px;
+        }
+        li{
+          color: #333;
+          font-weight: bold;
+          u.title-details{
+            padding: 10px 0px;display: block;
+            font-family: 'Open Sans', sans-serif;
+            font-style: italic;
+            font-weight: 600;
+          }
+          div{
+            text-transform: none;
+            font-weight: normal; font-family: 'Open Sans', sans-serif;
+          }
+        }
+      }
+
+      .content-img{
+        width: 100%;
+        display: flex;justify-content: center;
+        padding:10px 0 20px 0;
+        img{
+          width: auto;
+        }
+      }
+
+      ul.content-commit{
+        li{
+          font-weight: bold;
+          text-transform: uppercase;
+          font-style: italic;
+          text-decoration: underline;
+          padding: 10px 0px;
+          font-size: 115%;color: #333;
+        }
+        li:last-child{
+          color: var(--bs-danger);
+          text-transform: none;
+          text-decoration: none;
+        }
+      }
+      .address{
+          ul{
+            li{
+              font-family: 'Open Sans', sans-serif;
+              font-size: 110%;
+              padding-bottom: 10px;
+              color: var(--primary1-color);
+            }
+            li:first-child{
+              text-decoration: underline;
+              font-size: 120%;color:var(--primary-color);
+            }
+          }
+
+      }
+
+    }
+  }
+}
+//font-family: 'Pacifico', cursive;

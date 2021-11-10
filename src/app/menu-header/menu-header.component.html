@@ -1,0 +1,10 @@
+<div class="menuHeader">
+  <ul>
+    <li *ngFor="let item of menuHeader.listHeader"><a class="linkMother" href="" routerLink="{{item.mother.link}}"
+                                           routerLinkActive="$router_link-active$"></a> {{item.mother.name}}
+        <ul>
+          <li *ngFor="let item1 of item.child"><a href="" (click)="exit()" routerLinkActive="$router_link-active$" routerLink="{{item1.link}}">{{item1.name}} </a></li>
+        </ul>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,47 @@
+:root{
+  --bg-gray: #f5f5f5;
+  --text-color-black: #333;
+  --primary-color:#3c6382;
+  --primary1-color: #60a3bc;
+  --black-color: #2d3436;
+  --primary-linear: linear-gradient(to bottom,var(--primary-color), var(--primary1-color));
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&family=Ubuntu:wght@300&display=swap');
+//font-family: 'Quicksand', sans-serif;
+//font-family: 'Indie Flower', cursive;
+//font-family: 'Ubuntu', sans-serif;
+//font-family: 'Pacifico', cursive;
+//font-family: 'Nanum Myeongjo', serif;
+@font-face {
+  font-family: foro;
+  src: url("assets/Font/VL FORO ROUNDED REGULAR.OTF");
+}
+@font-face {
+  font-family: hevatica-regular;
+  src: url("assets/Font/[Ahotechshop.com]Helvetica-Neue-Viet-hoa/Helvetica/helvetica-neue-regular.ttf");
+}
+@font-face {
+  font-family: hevatica-light;
+  src: url("assets/Font/[Ahotechshop.com]Helvetica-Neue-Viet-hoa/Helvetica/HelveticaNeue-Light.otf");
+}
+@font-face {
+  font-family: hevatica-bold;
+  src: url("assets/Font/[Ahotechshop.com]Helvetica-Neue-Viet-hoa/Helvetica/helvetica-neue-bold.ttf");
+}
+
+html, body { height: 100%;font-size: 62.5% }
+body { margin: 0; font-family: hevatica-regular, sans-serif; }
+ul,li{
+  margin:0;padding:0;
+}
+.mat-form-field-wrapper{
+  padding-bottom: 0;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

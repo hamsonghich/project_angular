@@ -1,0 +1,104 @@
+<div class="container-fluid">
+  <div class="row row1">
+    <div class="col-6 top-header__left">
+      <ul>
+        <li>
+          <a href="tel: {{dataServicesService.infoCompany.phone[0]}}">
+            <mat-icon color="primary">phone</mat-icon>
+            <span class="hotlineText">Hotline:  {{dataServicesService.infoCompany.phone[0]}}</span></a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-6 top-header__right">
+      <button aria-label="top-header-right menu" mat-icon-button id="top-header__right--menu" onclick="">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div class="container-listMenuTop">
+        <ul>
+          <li class="order-check">
+            <a href="">
+              <i class="fa fa-edit mr-2"></i>
+              <span>Kiểm tra đơn hàng</span>
+            </a>
+          </li>
+          <li class="order-cart">
+            <a href="">
+              <i class="fa fa-shopping-cart mr-2"></i>
+              <span>Giỏ hàng</span>
+            </a>
+          </li>
+          <li class="account-login">
+            <a href="">
+              <i class="fa fa-sign-in-alt mr-2"></i>
+              <span>Đăng nhập</span>
+            </a>
+          </li>
+          <li class="account-register">
+            <a href="">
+              <i class="fa fa-key mr-2"></i>
+              <span>Đăng kí</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="">
+    <div class="midHeader">
+      <div class="logo">
+        <a [routerLink]="['./home']" routerLinkActive="$routerLinkActive">
+          <img src="./assets/Storage/Upload/banner/logo.png" alt="">
+        </a>
+      </div>
+
+      <div class="searchBox">
+        <mat-form-field appearance="outline">
+          <mat-label>Tìm kiếm sản phẩm</mat-label>
+          <input matInput type="text" placeholder="Tìm kiếm sản phẩm" [formControl]="myControl"
+                 [matAutocomplete]="auto">
+          <button mat-icon-button matSuffix>
+            <mat-icon>search</mat-icon>
+          </button>
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+
+      <div class="box-socialList">
+        <ul>
+          <li title="facebook"><a href=""><i class="fab fa-facebook-f" alt="facebook" title="facebook"></i></a></li>
+          <li title="twitter"><a href=""><i class="fab fa-twitter" title="twitter"></i></a></li>
+          <li title="youtube"><a href=""><i class="fab fa-youtube"></i></a></li>
+          <li title="google"><a href=""><i class="fab fa-google"></i></a></li>
+          <li title="zalo"><a href=""><i class="fas fa-comment-alt"></i></a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="bottomHeader">
+        <div  id="screenPC">
+          <app-menu-header></app-menu-header>
+        </div>
+        <div  id="screenMobile">
+          <app-menu-header-mobile></app-menu-header-mobile>
+        </div>
+
+      </div>
+  </div>
+
+  <div class="row row2">
+    <div class="centerCare">
+      <img src="https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/64/000000/external-support-business-and-finance-icongeek26-linear-colour-icongeek26.png"/>
+      <a href="" routerLink="/lienhe" routerLinkActive="$router_link-active$">Trung tâm chăm sóc khách hàng</a>
+    </div>
+  </div>
+
+</div>
+

@@ -1,0 +1,112 @@
+.container-fluid {
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 0;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 1px solid var(--bg-gray);
+
+  .list-group {
+    width: 100%;
+    height: 50px;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    font-family: hevatica-light, sans-serif;
+    font-weight: 400;
+
+    i {
+      margin-left: 20px;
+      margin-right: 10px;
+      font-size: 130%;
+      color: whitesmoke;
+    }
+
+    p {
+      text-transform: uppercase;
+      color: white;
+      margin-bottom: 0;
+      font-size: 120%;
+    }
+
+  }
+
+  mat-expansion-panel-header {
+    background-color: var(--bg-gray);
+  }
+
+  ::ng-deep mat-expansion-panel-header:hover {
+    background-color: var(--primary-color) !important;
+
+    mat-panel-title a {
+      color: white!important;
+    }
+  }
+
+  .mat-expansion-panel-header.mat-focus-indicator.mat-expansion-toggle-indicator-after.ng-star-inserted {
+    background-color: var(--bg-gray);
+  }
+
+  .mat-expansion-panel-header.mat-focus-indicator.mat-expansion-toggle-indicator-after.mat-expanded {
+    background-color: var(--primary-color);
+
+    mat-panel-title a {
+      color: white;
+    }
+
+  }
+
+  .mat-expansion-panel-header.mat-focus-indicator.mat-expansion-toggle-indicator-after.mat-expanded {
+    height: 50px;
+  }
+
+  ::ng-deep .mat-expansion-indicator::after, .mat-expansion-panel-header-description {
+    color: #333;
+  }
+
+  mat-panel-title {
+    a {
+      text-decoration: none;
+      color: #333;
+      font-family: hevatica-light, sans-serif;
+      font-weight: 500;
+    }
+
+  }
+
+  ul {
+    list-style: none;padding-left: 0!important;
+    background-color: var(--bg-gray);
+    li:hover{
+      background-color: var(--primary1-color);
+      transition: all 0.35s linear;
+      a,i{
+        color: white;
+      }
+    }
+    li {
+      height: 45px;
+      display: flex; transition: all 0.35s linear;
+      align-items: center;
+      border-top: 1px solid #e4e4e4;
+
+      i {
+        margin: 0 5px 0 20px;
+        color: #333;
+        opacity: 0.8;
+      }
+
+      a {
+        text-decoration: none;
+        margin-right: 10px;
+        font-family: hevatica-light, sans-serif;
+        font-weight: 500;
+        font-size: 100%;
+        color: #333;
+        opacity: 0.8;
+      }
+    }
+  }
+
+}
+

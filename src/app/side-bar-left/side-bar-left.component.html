@@ -1,0 +1,28 @@
+
+<div class="container-fluid" >
+  <div class="row">
+    <div class="list-group">
+      <i class="fal fa-list-ul"></i>
+      <p>Danh mục</p>
+    </div>
+  </div>
+  <div class="row">
+    <mat-accordion *ngFor="let item of menuHeader.listHeader">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <a href="" routerLink="{{item.mother.link}}"> {{item.mother.name}}</a>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ul>
+          <li *ngFor="let item1 of item.child">
+            <i class="far fa-box-open"></i>
+            <a href="" routerLink="{{item1.link}}"
+               routerLinkActive="$router_link-active$">{{item1.name}} </a>
+          </li>
+        </ul>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+</div>
