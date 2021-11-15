@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DataServicesService} from '../services/data-services.service';
 
 @Component({
   selector: 'app-tintuc',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TintucComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dataServicesService: DataServicesService) { }
 
   ngOnInit(): void {
   }

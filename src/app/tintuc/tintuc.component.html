@@ -1,1 +1,34 @@
-<p>tintuc works!</p>
+<div class="container-fluid">
+  <div class="row row1">
+    <div class="col-left">
+      <app-side-bar-left></app-side-bar-left>
+
+      <app-banner-sales></app-banner-sales>
+    </div>
+    <div class="col-right">
+      <div class="header-title">
+        <span>Tin tức khuyến mãi</span>
+      </div>
+      <div class="title-content">
+        <h3>{{dataServicesService.promotionNew.paramTitle[0]}}</h3>
+        <p><b>{{dataServicesService.promotionNew.paramTitle[1]}}</b></p>
+        <p><b>{{dataServicesService.promotionNew.paramTitle[2]}}</b></p>
+        <div class="img-promotion">
+          <img src="{{dataServicesService.promotionNew.paramImg[0]}}" alt="">
+        </div>
+        <p>{{dataServicesService.promotionNew.paramContent[0]}}</p>
+        <p>{{dataServicesService.promotionNew.paramContent[1]}} <b style="color: red">{{dataServicesService.promotionNew.paramTime[0]}}</b></p>
+        <p>{{dataServicesService.promotionNew.paramContent[2]}} <b style="color: red">{{dataServicesService.promotionNew.paramTime[1]}}</b></p>
+
+        <p><b>{{dataServicesService.promotionNew.paramContent[3]}}</b></p>
+        <p><i>{{dataServicesService.promotionNew.paramContent[4]}}</i></p>
+        <p><i>{{dataServicesService.promotionNew.paramContent[5]}}  </i></p>
+        <p><i>{{dataServicesService.promotionNew.paramContent[6]}}{{dataServicesService.infoCompany.email[1]}} hoặc
+          {{dataServicesService.promotionNew.paramContent[7]}} {{dataServicesService.infoCompany.phone[0]}}</i>
+        </p>
+        <p><b>Trân trọng cảm ơn  !!!</b></p>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer-main></app-footer-main>

@@ -39,6 +39,18 @@ body { margin: 0; font-family: hevatica-regular, sans-serif; }
 ul,li{
   margin:0;padding:0;
 }
+.centerFlex{
+  display: flex;justify-content: center;
+  align-items: center;
+}
+.rightFlex{
+  display: flex;justify-content: flex-end;
+  align-items: center;
+}
+.leftFlex{
+  display: flex;justify-content: flex-start;
+  align-items: center;
+}
 .mat-form-field-wrapper{
   padding-bottom: 0;
 }

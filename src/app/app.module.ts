@@ -41,6 +41,7 @@ import { XopEvaFoamComponent } from './xop-eva-foam/xop-eva-foam.component';
 import { XopbongkhiComponent } from './xopbongkhi/xopbongkhi.component';
 import {RatingModule} from 'ngx-rating';
 import { BannerSalesComponent } from './banner-sales/banner-sales.component';
+import { TrangChuComponent } from './trang-chu/trang-chu.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { BannerSalesComponent } from './banner-sales/banner-sales.component';
     XopEvaFoamComponent,
     XopbongkhiComponent,
     BannerSalesComponent,
+    TrangChuComponent,
   ],
     imports: [
         BrowserModule,

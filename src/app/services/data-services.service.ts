@@ -99,6 +99,12 @@ interface ProductDetailsList {
     }[];
 }
 
+interface PromotionNew{
+  paramTitle: any[];
+  paramImg: any[];
+  paramContent: any[];
+  paramTime: any[];
+}
 
 @Injectable({
   providedIn: 'root'
@@ -106,7 +112,7 @@ interface ProductDetailsList {
 
 export class DataServicesService {
   public listHeader: ListHeader[] = [
-    {mother: {name: 'TRANG CHỦ', link: ''}, child: []},
+    {mother: {name: 'TRANG CHỦ', link: '/trangchu'}, child: []},
     {mother: {name: 'GIỚI THIỆU', link: '/gioithieu'}, child: []},
     {
       mother: {name: 'THÙNG NHỰA DANPLA', link: '/thungnhuadanpla'},
@@ -229,46 +235,6 @@ export class DataServicesService {
           {
             title: '1. GIỚI THIỆU SẢN PHẨM', contentParam: [
                {param1: 'Thùng nhựa danpla được Công ty cổ phần sản xuất KT-PACK chúng tôi thiết kế có nắp nhám dính, giúp cho doanh việc các bạn có thể bảo quản đựng hàng hóa tốt hơn, chống lại những ảnh hưởng của thời tiết, khí hậu , nấm mốc', param2: ''},
-              { param1: 'Ngoài những loại Thùng nhựa cố định nắp chồng, cty chúng tôi còn nhiều các mẫu mã thùng nhưa danpla khác nhau.Ví dụ như thùng nhựa danpla chống tĩnh điện, thùng nhựa danpla có nắp tay cầm, khay nhựa danpla...', param2: ''},
-              { param1: 'Nếu bạn đang quan tấm đến các loại thùng nhựa danpla có nắp dính, vui lòng liên hệ tới số điện thoại Cty chúng tôi '  + this.infoCompany.phone[0] + ', Hotline:' + this.infoCompany.phone[1] + 'để đội ngũ nhân viên kinh doanh và kỹ thuật bên chúng tôi có thể giúp cho bạn tìm được sản phẩm tốt nhất và bảng báo giá.', param2: ''},
-            ]
-          },
-          {title: '2. Thông tin kỹ thuật sản phẩm thùng nhựa danpla có nắp  chồng', contentParam: [
-              {param1: 'Kích thước ngoài', param2: 'Sản xuất theo yêu cầu của khách hàng'},
-              {param1: 'Kích thước trong', param2: 'Sản xuất theo yêu cầu của khách hàng'},
-              {param1: 'Độ dày ', param2: '2, 3, 4, 5  mm'},
-              {param1: 'Trọng lượng', param2: 'g'},
-              {param1: 'Nguyên liệu', param2: '100% nhựa Danpla thường'},
-              {param1: 'Độ chống tĩnh điện', param2: 'Không'},
-              {param1: 'Màu sắc', param2: 'Trắng, xanh dương, xanh lá, vàng, cam, tím, xám.'},
-            ]},
-        ]
-      },
-      {
-        typeName: 'thungnhuaDanplaCoDinhNapChong',
-        id: {name: 'Thùng nhựa cố định nắp chồng', link: 'thungnhuadanplaCoDinhNapChong'},
-        img: [
-          {
-            name: 'thung_danpla_co_dinh_nap_chong.png',
-            link: './assets/Storage/Upload/product/product_nhuaDanpla/thung_danpla_co_dinh_nap_chong.jpg'
-          },
-          {name: 'thung_danpla_co_dinh_nap_chong.png', link: './assets/Storage/Upload/img_demo/img_1.jpg'},
-          {name: 'thung_danpla_co_dinh_nap_chong.png', link: './assets/Storage/Upload/img_demo/img_2.jpg'},
-          {name: 'thung_danpla_co_dinh_nap_chong.png', link: './assets/Storage/Upload/img_demo/img_3.jpg'},
-          {name: 'thung_danpla_co_dinh_nap_chong.png', link: './assets/Storage/Upload/img_demo/img_4.jpg'},
-          {name: 'thung_danpla_co_dinh_nap_chong.png', link: './assets/Storage/Upload/img_demo/img_5.jpg'},
-        ],
-        address: {name: 'Hưng Yên'},
-        price: {name: 'Liên hệ'},
-        sellNumber: {number: this.getRandomInt(1, 2)},
-        like: false,
-        star: {number: this.getRandomInt(3, 5)},
-        discount: {number: this.getRandomInt1(10, 30)},
-        evaluate: {number: this.getRandomInt1(100, 1000)},
-        description: [
-          {
-            title: '1. GIỚI THIỆU SẢN PHẨM', contentParam: [
-              {param1: 'Thùng nhựa danpla được Công ty cổ phần sản xuất KT-PACK chúng tôi thiết kế có nắp nhám dính, giúp cho doanh việc các bạn có thể bảo quản đựng hàng hóa tốt hơn, chống lại những ảnh hưởng của thời tiết, khí hậu , nấm mốc', param2: ''},
               { param1: 'Ngoài những loại Thùng nhựa cố định nắp chồng, cty chúng tôi còn nhiều các mẫu mã thùng nhưa danpla khác nhau.Ví dụ như thùng nhựa danpla chống tĩnh điện, thùng nhựa danpla có nắp tay cầm, khay nhựa danpla...', param2: ''},
               { param1: 'Nếu bạn đang quan tấm đến các loại thùng nhựa danpla có nắp dính, vui lòng liên hệ tới số điện thoại Cty chúng tôi '  + this.infoCompany.phone[0] + ', Hotline:' + this.infoCompany.phone[1] + 'để đội ngũ nhân viên kinh doanh và kỹ thuật bên chúng tôi có thể giúp cho bạn tìm được sản phẩm tốt nhất và bảng báo giá.', param2: ''},
             ]
@@ -909,6 +875,81 @@ export class DataServicesService {
             ]},
         ],
       },
+      {
+        typeName: 'vachnhuaDanpla1',
+        id: {name: 'Vách ngăn Danpla 1', link: 'vachnhuaDanpla1'},
+        img: [
+          {name: 'vach_ngan_danpla_1.png', link: './assets/Storage/Upload/product/product_vachngan_Danpla/vach_ngan_danpla_1.png'},
+          {name: 'thung_danpla_co_dinh_nap_chong.png', link: './assets/Storage/Upload/img_demo/img_1.jpg'},
+          {name: 'thung_danpla_co_dinh_nap_chong.png', link: './assets/Storage/Upload/img_demo/img_2.jpg'},
+          {name: 'thung_danpla_co_dinh_nap_chong.png', link: './assets/Storage/Upload/img_demo/img_3.jpg'},
+          {name: 'thung_danpla_co_dinh_nap_chong.png', link: './assets/Storage/Upload/img_demo/img_4.jpg'},
+          {name: 'thung_danpla_co_dinh_nap_chong.png', link: './assets/Storage/Upload/img_demo/img_5.jpg'},
+        ],
+        address: {name: 'Hà Nội'},
+        price: {name: 'Liên hệ'},
+        sellNumber: {number: this.getRandomInt(1, 2)},
+        like: false,
+        star: {number: this.getRandomInt(3, 5)},
+        discount: {number: this.getRandomInt1(10, 30)},
+        evaluate: {number: this.getRandomInt1(100, 1000)},
+        description: [
+          {
+            title: '1. GIỚI THIỆU SẢN PHẨM', contentParam: [
+              {param1: 'Khay danpla là một trong những sản phẩm mà khách hàng đã sản xuất tại KT-PACK. Kích thước và số ngăn hoàn toàn có thể thay đổi theo yêu cầu của khách hàng.', param2: ''},
+              { param1: '', param2: ''},
+              // tslint:disable-next-line:max-line-length
+              { param1: 'Nếu bạn đang quan tấm đến các loại vách nhựa danpla, vui lòng liên hệ tới số điện thoại Cty chúng tôi '  + this.infoCompany.phone[0] + ', Hotline:' + this.infoCompany.phone[1] + 'để đội ngũ nhân viên kinh doanh và kỹ thuật bên chúng tôi có thể giúp cho bạn tìm được sản phẩm tốt nhất và bảng báo giá.', param2: ''},
+            ]
+          },
+          {title: '2. Thông tin kỹ thuật sản phẩm thùng nhựa danpla có nắp  chồng', contentParam: [
+              {param1: 'Kích thước ngoài', param2: 'Sản xuất theo yêu cầu của khách hàng'},
+              {param1: 'Kích thước trong', param2: 'Sản xuất theo yêu cầu của khách hàng'},
+              {param1: 'Độ dày ', param2: '2, 3, 4, 5  mm'},
+              {param1: 'Trọng lượng', param2: 'g'},
+              {param1: 'Nguyên liệu', param2: ' PP'},
+              {param1: 'Độ chống tĩnh điện', param2: 'Ω'},
+              {param1: 'Màu sắc', param2: 'Trắng, xanh dương, xanh lá, vàng, cam, tím, xám.'},
+            ]},
+        ],
+      },
+      {
+        typeName: 'vachnhuaDanpla2',
+        id: {name: 'Vách ngăn Danpla 2', link: 'vachnhuaDanpla2'},
+        img: [
+          {name: 'vach_ngan_danpla_2.png', link: './assets/Storage/Upload/product/product_vachngan_Danpla/vach_ngan_danpla_2.png'},
+          {name: 'thung_danpla_co_dinh_nap_chong.png', link: './assets/Storage/Upload/img_demo/img_1.jpg'},
+          {name: 'thung_danpla_co_dinh_nap_chong.png', link: './assets/Storage/Upload/img_demo/img_2.jpg'},
+          {name: 'thung_danpla_co_dinh_nap_chong.png', link: './assets/Storage/Upload/img_demo/img_3.jpg'},
+          {name: 'thung_danpla_co_dinh_nap_chong.png', link: './assets/Storage/Upload/img_demo/img_4.jpg'},
+          {name: 'thung_danpla_co_dinh_nap_chong.png', link: './assets/Storage/Upload/img_demo/img_5.jpg'},
+        ],
+        address: {name: 'Hà Nội'},
+        price: {name: 'Liên hệ'},
+        sellNumber: {number: this.getRandomInt(1, 2)},
+        like: false,
+        star: {number: this.getRandomInt(3, 5)},
+        discount: {number: this.getRandomInt1(10, 30)},
+        evaluate: {number: this.getRandomInt1(100, 1000)},
+        description: [
+          {
+            title: '1. GIỚI THIỆU SẢN PHẨM', contentParam: [
+              {param1: 'Thùng nhựa danpla được Công ty cổ phần sản xuất KT-PACK chúng tôi thiết kế có nắp nhám dính, giúp cho doanh việc các bạn có thể bảo quản đựng hàng hóa tốt hơn, chống lại những ảnh hưởng của thời tiết, khí hậu , nấm mốc', param2: ''},
+              { param1: 'Ngoài những loại Thùng nhựa cố định nắp chồng, cty chúng tôi còn nhiều các mẫu mã thùng nhưa danpla khác nhau.Ví dụ như thùng nhựa danpla chống tĩnh điện, thùng nhựa danpla có nắp tay cầm, khay nhựa danpla...', param2: ''},
+              { param1: 'Nếu bạn đang quan tấm đến các loại thùng nhựa danpla có nắp dính, vui lòng liên hệ tới số điện thoại Cty chúng tôi '  + this.infoCompany.phone[0] + ', Hotline:' + this.infoCompany.phone[1] + 'để đội ngũ nhân viên kinh doanh và kỹ thuật bên chúng tôi có thể giúp cho bạn tìm được sản phẩm tốt nhất và bảng báo giá.', param2: ''},
+            ]
+          },
+          {title: '2. Thông tin kỹ thuật sản phẩm thùng nhựa danpla có nắp  chồng', contentParam: [
+              {param1: 'Kích thước ngoài', param2: 'Sản xuất theo yêu cầu của khách hàng'},
+              {param1: 'Kích thước trong', param2: 'Sản xuất theo yêu cầu của khách hàng'},
+              {param1: 'Độ dày ', param2: '2, 3, 4, 5  mm'},
+              {param1: 'Trọng lượng', param2: 'g'},
+              {param1: 'Nguyên liệu', param2: '100% nhựa Danpla thường'},
+              {param1: 'Độ chống tĩnh điện', param2: 'Không'},
+              {param1: 'Màu sắc', param2: 'Trắng, xanh dương, xanh lá, vàng, cam, tím, xám.'},
+            ]},
+        ],
+      },
     ],
     xopEvaPEFoam: [
       {
@@ -1274,11 +1315,105 @@ export class DataServicesService {
               {param1: 'Màu sắc', param2: 'Trắng, xanh dương, xanh lá, vàng, cam, tím, xám.'},
             ]},
         ],
+      },
+      {
+        typeName: 'xopbongkhiloaithuong',
+        id: {name: 'xốp bóng khí chống va đập loại thường', link: 'xopbongkhiloaithuong'},
+        img: [
+          {name: 'xốp bóng khí chống va đập loại thường', link: './assets/Storage/Upload/product/xop_bong_khi/tui_bong_khi_chong_va_dap_loai_thuong_1.png'},
+          {name: 'xốp bóng khí chống va đập loại thường', link: './assets/Storage/Upload/product/xop_bong_khi/tui_bong_khi_chong_va_dap_loai_thuong_2.png'},
+          {name: 'xốp bóng khí chống va đập loại thường', link: './assets/Storage/Upload/product/xop_bong_khi/tui_bong_khi_chong_va_dap_loai_thuong_1.png'},
+          {name: 'xốp bóng khí chống va đập loại thường', link: './assets/Storage/Upload/product/xop_bong_khi/tui_bong_khi_chong_va_dap_loai_thuong_1.png'},
+          {name: 'xốp bóng khí chống va đập loại thường', link: './assets/Storage/Upload/product/xop_bong_khi/tui_bong_khi_chong_va_dap_loai_thuong_1.png'},
+        ],
+        address: {name: 'Hưng Yên'},
+        price: {name: 'Liên hệ'},
+        sellNumber: {number: this.getRandomInt(1, 2)},
+        like: false,
+        star: {number: this.getRandomInt(3, 5)},
+        discount: {number: this.getRandomInt1(10, 30)},
+        evaluate: {number: this.getRandomInt1(100, 1000)},
+        description: [
+          {
+            title: '1. GIỚI THIỆU SẢN PHẨM', contentParam: [
+              {param1: 'Thùng nhựa danpla được Công ty cổ phần sản xuất KT-PACK chúng tôi thiết kế có nắp nhám dính, giúp cho doanh việc các bạn có thể bảo quản đựng hàng hóa tốt hơn, chống lại những ảnh hưởng của thời tiết, khí hậu , nấm mốc', param2: ''},
+              { param1: 'Ngoài những loại Thùng nhựa cố định nắp chồng, cty chúng tôi còn nhiều các mẫu mã thùng nhưa danpla khác nhau.Ví dụ như thùng nhựa danpla chống tĩnh điện, thùng nhựa danpla có nắp tay cầm, khay nhựa danpla...', param2: ''},
+              { param1: 'Nếu bạn đang quan tấm đến các loại thùng nhựa danpla có nắp dính, vui lòng liên hệ tới số điện thoại Cty chúng tôi '  + this.infoCompany.phone[0] + ', Hotline:' + this.infoCompany.phone[1] + 'để đội ngũ nhân viên kinh doanh và kỹ thuật bên chúng tôi có thể giúp cho bạn tìm được sản phẩm tốt nhất và bảng báo giá.', param2: ''},
+            ]
+          },
+          {title: '2. Thông tin kỹ thuật sản phẩm thùng nhựa danpla có nắp  chồng', contentParam: [
+              {param1: 'Kích thước ngoài', param2: 'Sản xuất theo yêu cầu của khách hàng'},
+              {param1: 'Kích thước trong', param2: 'Sản xuất theo yêu cầu của khách hàng'},
+              {param1: 'Độ dày ', param2: '2, 3, 4, 5  mm'},
+              {param1: 'Trọng lượng', param2: 'g'},
+              {param1: 'Nguyên liệu', param2: '100% nhựa Danpla thường'},
+              {param1: 'Độ chống tĩnh điện', param2: 'Không'},
+              {param1: 'Màu sắc', param2: 'Trắng, xanh dương, xanh lá, vàng, cam, tím, xám.'},
+            ]},
+        ],
+      },
+      {
+        typeName: 'xopbongkhiloaichongtinhdien',
+        id: {name: 'xốp bóng khí chống va đập loại chống tĩnh điện', link: 'xopbongkhiloaichongtinhdien'},
+        img: [
+          {name: 'xốp bóng khí chống va đập loại chống tĩnh điện', link: './assets/Storage/Upload/product/xop_bong_khi/tui_bong_khi_chong_va_dap_loai_chong_tinh_dien_1.png'},
+          {name: 'xốp bóng khí chống va đập loại chống tĩnh điện', link: './assets/Storage/Upload/product/xop_bong_khi/tui_bong_khi_chong_va_dap_loai_chong_tinh_dien_2.png'},
+          {name: 'xốp bóng khí chống va đập loại chống tĩnh điện', link: './assets/Storage/Upload/product/xop_bong_khi/tui_bong_khi_chong_va_dap_loai_chong_tinh_dien_1.png'},
+          {name: 'xốp bóng khí chống va đập loại chống tĩnh điện', link: './assets/Storage/Upload/product/xop_bong_khi/tui_bong_khi_chong_va_dap_loai_chong_tinh_dien_1.png'},
+          {name: 'xốp bóng khí chống va đập loại chống tĩnh điện', link: './assets/Storage/Upload/product/xop_bong_khi/tui_bong_khi_chong_va_dap_loai_chong_tinh_dien_1.png'},
+        ],
+        address: {name: 'Hưng Yên'},
+        price: {name: 'Liên hệ'},
+        sellNumber: {number: this.getRandomInt(1, 2)},
+        like: false,
+        star: {number: this.getRandomInt(3, 5)},
+        discount: {number: this.getRandomInt1(10, 30)},
+        evaluate: {number: this.getRandomInt1(100, 1000)},
+        description: [
+          {
+            title: '1. GIỚI THIỆU SẢN PHẨM', contentParam: [
+              {param1: 'Thùng nhựa danpla được Công ty cổ phần sản xuất KT-PACK chúng tôi thiết kế có nắp nhám dính, giúp cho doanh việc các bạn có thể bảo quản đựng hàng hóa tốt hơn, chống lại những ảnh hưởng của thời tiết, khí hậu , nấm mốc', param2: ''},
+              { param1: 'Ngoài những loại Thùng nhựa cố định nắp chồng, cty chúng tôi còn nhiều các mẫu mã thùng nhưa danpla khác nhau.Ví dụ như thùng nhựa danpla chống tĩnh điện, thùng nhựa danpla có nắp tay cầm, khay nhựa danpla...', param2: ''},
+              { param1: 'Nếu bạn đang quan tấm đến các loại thùng nhựa danpla có nắp dính, vui lòng liên hệ tới số điện thoại Cty chúng tôi '  + this.infoCompany.phone[0] + ', Hotline:' + this.infoCompany.phone[1] + 'để đội ngũ nhân viên kinh doanh và kỹ thuật bên chúng tôi có thể giúp cho bạn tìm được sản phẩm tốt nhất và bảng báo giá.', param2: ''},
+            ]
+          },
+          {title: '2. Thông tin kỹ thuật sản phẩm thùng nhựa danpla có nắp  chồng', contentParam: [
+              {param1: 'Kích thước ngoài', param2: 'Sản xuất theo yêu cầu của khách hàng'},
+              {param1: 'Kích thước trong', param2: 'Sản xuất theo yêu cầu của khách hàng'},
+              {param1: 'Độ dày ', param2: '2, 3, 4, 5  mm'},
+              {param1: 'Trọng lượng', param2: 'g'},
+              {param1: 'Nguyên liệu', param2: '100% nhựa Danpla thường'},
+              {param1: 'Độ chống tĩnh điện', param2: 'Không'},
+              {param1: 'Màu sắc', param2: 'Trắng, xanh dương, xanh lá, vàng, cam, tím, xám.'},
+            ]},
+        ],
       }
     ]
   };
   public productDetailsListTotal: any[] = [];
-
+  public promotionNew: PromotionNew = {
+    paramTitle: [
+      'Chào tháng 8 ! Rinh thùng nhựa đón quà xinh',
+      'Kính gửi Quý Khách hàng!',
+      'Công ty cổ phần sản xuất KT-PACK xin trân trọng cảm ơn Quý khách hàng đã tin tưởng và sử dụng sản phẩm của chúng tôi trong thời gian qua!'
+    ],
+    paramContent : [
+      'Tháng 8 này, với mong muốn dành sự tri ân tới toàn bộ khách hàng với KT-PACK , chúng tôi xin gửi tới Quý khách hàng chương trình quà tặng "RINH THÙNG NHỰA - ĐÓN QUÀ XINH" với nội dung cụ thể như sau:',
+      ' Thời gian bắt đầu chương trình: ',
+      'Thời gian hoàn trả quà từ ngày: ',
+      'Đối tượng áp dụng:',
+      'Quý khách hàng có tổng giá trị đơn hàng THÙNG NHỰA (bao gồm: thùng nhựa đặc, thùng nhựa rỗng, khay linh kiện) phát sinh trong tháng 8/2018 lớn hơn hoặc bằng 20.000.000 VNĐ',
+      'Quà tặng: 1 bộ cốc thủy tinh cao cấp trị giá 500.000VNĐ (không có giá trị quy đổi thành tiền mặt)',
+      'Quý khách hàng có thể tham khảo thêm thông tin tại Website:',
+      'liên hệ phòng Chăm Sóc khách hàng qua số điện thoại:',
+    ],
+    paramImg : ['./assets/Storage/Upload/banner/khuyenmai-img-tintuc.jpg', './assets/Storage/Upload/banner/icon_khuyenmai.jpg'],
+    paramTime : ['01/08/2018 đến hết ngày 31/08/2018.', '01/09/2018 đến hết ngày 30/09/2018'],
+  };
+  public bannerImgTrangchu = [
+    {link: './assets/Storage/Upload/banner/Banner_trangchu_1.jpeg', name: 'img1-trang-chu'},
+    {link: './assets/Storage/Upload/banner/Banner_trangchu_2.jpeg', name: 'img2-trang-chu'},
+  ];
 
   constructor() {
     for (const item of this.productDetailsList.thungnhuaDanpla) {
